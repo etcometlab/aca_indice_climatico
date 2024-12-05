@@ -236,6 +236,60 @@ Sé que hay otras páginas del inmet, les pido que me ayuden a buscarlas.
   Documentación oficial, foros de usuarios, y soporte comunitario.
 
 
+## **Fuente de Datos:  Departamento Nacional de Planeación
+
+### **1. Disponibilidad y Acceso**
+
+- **¿Tiene información de lluvias (precipitación), fuertes lluvias?**
+  No
+- **¿Tiene información de vientos, velocidad del viento, rafagas de viento?**
+  No
+- **¿Tiene información de temperaturas máximas, mínimas, promedio, datos de temperatura horaria?**
+  No
+- **¿Tiene acceso libre?** 
+- **¿Desde cuándo hay datos?** 
+- **¿Necesitamos un permiso especial?** 
+- **¿Cómo se puede acceder a los datos?** 
+- **¿Podemos crear una automatización para la descarga de los datos?** 
+- **¿Cuál es la frecuencia de actualización de los datos?** 
+- **¿En qué formato están disponibles los datos?** 
+- **¿Existen restricciones geográficas en el acceso?**
+
+### **2. Calidad y Estandarización**
+- **¿Qué nivel de resolución espacial tienen los datos?** 
+- **¿Qué nivel de resolución temporal tienen los datos?** 
+- **¿Los datos han sido sometidos a algún proceso de limpieza o validación?** 
+- **¿Incluyen metadatos detallados y consistentes?**
+
+### **3. Contenido de los Datos**
+- **¿Qué variables están disponibles (temperatura, precipitación, viento, etc.)?** 
+- **¿Los datos incluyen mediciones históricas, simulaciones o ambos?** 
+- **¿Existen variables derivadas (índices climáticos, anomalías, etc.)?**
+
+### **4. Uso y Licencia**
+- **¿Qué tipo de licencia tienen los datos (libre, restringida, comercial)?** 
+- **¿Existe un límite en la cantidad de datos que se pueden descargar?** 
+- **¿Se requiere atribuir la fuente en caso de uso?** 
+- **¿Es posible redistribuir los datos o integrarlos en nuevos productos?**
+
+### **5. Automatización y Escalabilidad**
+- **¿Los datos están disponibles a través de APIs?** 
+- **¿Existen restricciones en la velocidad o volumen de solicitudes para la descarga automatizada?** 
+- **¿Qué herramientas o lenguajes son compatibles con el acceso a los datos (Python, R, etc.)?**
+
+### **6. Contexto y la Institución**
+- **¿Quién es la entidad responsable de los datos?** 
+- **¿Cuál es la reputación de la fuente en términos de calidad y fiabilidad?** 
+- **¿Hay documentación técnica detallada para entender los datos?**
+
+### **7. Usabilidad**
+- **¿Es necesario transformar los datos para adaptarlos a los objetivos del proyecto?** 
+- **¿Qué tan fácil es integrar los datos con otras fuentes?** 
+- **¿Qué soporte técnico está disponible para resolver problemas?**
+- ** Otras observaciones
+  Es información que sirve para el área de riesgo de un municipio
+
+
 ## **Fuente de Datos: [Nombre de la Fuente]**
 
 *(Repetir la estructura anterior para cada fuente de datos)*
