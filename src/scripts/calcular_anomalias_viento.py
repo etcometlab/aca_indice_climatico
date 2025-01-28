@@ -7,9 +7,7 @@ import pdb
 
 
 def load_percentiles(percentile_file_path):
-
     percentiles_data = xr.open_dataset(percentile_file_path)
-    
     return percentiles_data#.sel(month=month)
 
 
@@ -30,7 +28,7 @@ def calculos_componente_viento(ds_path,year,month):
 
 
     #Calculamos el wind power (WP)
-    pdb.set_trace() 
+    #pdb.set_trace() 
     ds = ds.assign_coords(year=ds["time"].dt.year, month=ds["time"].dt.month)
     
     p= 1.23  #constante de la densidad del aire (kg/m3)
@@ -45,8 +43,6 @@ def calculos_componente_viento(ds_path,year,month):
     wpu = wp_mean_monthly + 1.28 * wp_std_monthly # el cuantil 90 calcula el límite superior
 
     
-    pdb.set_trace() 
-
     #ds.dims
     #ds.coords 
     percentiles=load_percentiles("../../data/processed/era5_wind_percentil.nc")
@@ -54,7 +50,7 @@ def calculos_componente_viento(ds_path,year,month):
     percentil_90_by_month = percentiles['percentil_90'].sel(month=ds['month'])#se toma el percentil correspondiente al mes en `ds`
 
     exceedance = (ds['wind_power'] > percentil_90_by_month)
-    WP_90_JK = exceedance.sum('time').astype(int) / ds['wind_power'].groupby(['year', 'month']).count('time')
+    WP_90_JK = exceedance.sum('time').astype(int) / ds['wind_power'].groupby(['year', 'month']).count('time')# ecuación 9
     
     # Promedio y desviación estándar para la referencia
     mean_ref = WP_90_JK.groupby(['year', 'month']).mean()
@@ -63,7 +59,7 @@ def calculos_componente_viento(ds_path,year,month):
     # Estandarizar WP90 para calcular la componente del viento (WC)
     wind_component = (WP_90_JK - mean_ref) / std_ref
 
-    pdb.set_trace() 
+    #pdb.set_trace() 
     # Crear un nuevo Dataset con los resultados
     nuevo_ds = xr.Dataset({
         'wind_power':ds["wind_power"],
@@ -95,13 +91,11 @@ if __name__=="__main__":
     print("Oi")
     file_path="../../data/raw/era5/era5_daily_combined_wind.nc"
     year=1984
-    month=1
-    
+    month=1    
     ds=calculos_componente_viento(file_path,year,month)
-
-
-
     #aca_indice_climatico\data\raw\era5\era5_daily_combined_wind.nc
+
+
 
     
     

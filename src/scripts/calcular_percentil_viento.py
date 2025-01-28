@@ -3,6 +3,7 @@ import numpy as np
 import xarray as xr
 import pandas as pd
 
+
 def calcular_percentiles_viento(archivo_entrada): 
     """
     Se calcula aquellos valores que están encima del percentil 90:
