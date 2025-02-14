@@ -221,8 +221,8 @@ def calcular_percentiles():
     ruta = "../../data/processed"
     file = 'era5_daily_combined_rain.nc'
     archivo_union = os.path.join(ruta, file)
-    archivo_salida_lluvia = os.path.join(ruta, "era5_estadisticas_lluvia.nc")
-    archivo_salida_sequia = os.path.join(ruta, "era5_estadisticas_sequia.nc")
+    archivo_salida_lluvia = os.path.join(ruta, "era5_lluvias_percentil.nc")
+    archivo_salida_sequia = os.path.join(ruta, "era5_sequia_percentil.nc")
 
     #calcular la lluvia
     tp_daily = xr.open_dataset(archivo_union)

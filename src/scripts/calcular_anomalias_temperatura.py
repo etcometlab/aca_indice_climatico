@@ -125,18 +125,13 @@ def calcular_anomalias(archivo_percentiles, archivo_comparar, year, month, salid
 
     ### Calcular los porcentajes
     # Drop unnecessary coordinates
-    variables_to_drop = [count_above_90_max, count_below_10_max, count_above_90_min, count_below_10_min,
-                         anomalies_above_max, anomalies_below_min]
+    variables_to_drop = [anomalies_above_max, anomalies_below_min]
     variables_dropped = drop_unnecessary_coords(variables_to_drop, 'quantile')
 
     # Create anomalies dataset
     anomalies = create_anomalies_dataset({
-        'count_above_90_max': variables_dropped[0],
-        'count_below_10_max': variables_dropped[1],
-        'count_above_90_min': variables_dropped[2],
-        'count_below_10_min': variables_dropped[3],
-        't_90': variables_dropped[4],
-        't_10': variables_dropped[5]
+        't_90': variables_dropped[0],
+        't_10': variables_dropped[1]
     }, attrs={'description': 'Anomalies and counts of temperature extremes'})
 
     # Save the dataset
