@@ -157,6 +157,7 @@ def plot_ICA(anomalies_combined_temp, anomalies_combined_rainfall, anomalies_com
     df_rainfall (DataFrame): DataFrame con las columnas 'Año', 'Mes', 'Anomalia_Lluvia'.
     df_drought (DataFrame): DataFrame con las columnas 'Año', 'Mes', 'Anomalia_Sequia'.
     df_wind (DataFrame): DataFrame con las columnas 'year', 'month', 'anomalies_above'.
+
     """
     # Lectura Archivos
     df_temp = pd.read_csv(anomalies_combined_temp)
@@ -218,18 +219,57 @@ def plot_ICA(anomalies_combined_temp, anomalies_combined_rainfall, anomalies_com
     plt.savefig(output_path, format="png", dpi=300)
     print(f"Gráfica guardada en: {output_path}")
 
+def plot_creation_storage(anomalies_combined_temp, anomalies_combined_rainfall, anomalies_combined_drought, anomalies_combined_wind,output_dir):
+    """
+    Funcion de generación y almacenamiento de graficas 
 
-if __name__ == "__main__":
-
-    anomalies_combined_temp = "../../data/processed/anomalies_temperature_combined.csv"
-    anomalies_combined_rainfall = "../../data/processed/anomalies_precipitation_combined.csv"
-    anomalies_combined_drought = "../../data/processed/anomalies_drought_combined.csv"
-    anomalies_combined_wind = "../../data/processed/anomalies_wind_combined.csv"
-    output_dir = "../../articles/graficas"
-
+    Parámetros:
+    df_temp (DataFrame): DataFrame con las columnas 'year', 'month', 't_90', 't_10'.
+    df_rainfall (DataFrame): DataFrame con las columnas 'Año', 'Mes', 'Anomalia_Lluvia'.
+    df_drought (DataFrame): DataFrame con las columnas 'Año', 'Mes', 'Anomalia_Sequia'.
+    df_wind (DataFrame): DataFrame con las columnas 'year', 'month', 'anomalies_above'.
+    """
     plot_temp_anomalies(anomalies_combined_temp,output_dir)
     plot_rainfall_anomalies(anomalies_combined_rainfall,output_dir)
     plot_drought_anomalies(anomalies_combined_drought,output_dir)
     plot_wind_anomalies(anomalies_combined_wind,output_dir)
     plot_ICA(anomalies_combined_temp, anomalies_combined_rainfall, anomalies_combined_drought, anomalies_combined_wind,output_dir)
 
+
+if __name__ == "__main__":
+
+    # Graficas Colombia
+    anomalies_combined_temp_col = "../../data/processed/anomalias_colombia/anomalies_temperature_combined.csv"
+    anomalies_combined_rainfall_col = "../../data/processed/anomalias_colombia/anomalies_precipitation_combined.csv"
+    anomalies_combined_drought_col = "../../data/processed/anomalias_colombia/anomalies_drought_combined.csv"
+    anomalies_combined_wind_col = "../../data/processed/anomalias_colombia/anomalies_wind_combined.csv"
+    output_dir_col = "../../articles/graficas/anomalias_colombia"
+
+    plot_creation_storage(anomalies_combined_temp_col, anomalies_combined_rainfall_col, anomalies_combined_drought_col, anomalies_combined_wind_col,output_dir_col)  
+
+    # Graficas Antioquia
+    anomalies_combined_temp_ant = "../../data/processed/anomalias_antioquia/anomalies_temperature_combined.csv"
+    anomalies_combined_rainfall_ant = "../../data/processed/anomalias_antioquia/anomalies_precipitation_combined.csv"
+    anomalies_combined_drought_ant = "../../data/processed/anomalias_antioquia/anomalies_drought_combined.csv"
+    anomalies_combined_wind_ant = "../../data/processed/anomalias_antioquia/anomalies_wind_combined.csv"
+    output_dir_ant = "../../articles/graficas/anomalias_antioquia"
+
+    plot_creation_storage(anomalies_combined_temp_ant, anomalies_combined_rainfall_ant, anomalies_combined_drought_ant, anomalies_combined_wind_ant,output_dir_ant)  
+
+     # Graficas cundinamarca y Bogotá
+    anomalies_combined_temp_cun = "../../data/processed/anomalias_cundinamarca_bogota/anomalies_temperature_combined.csv"
+    anomalies_combined_rainfall_cun = "../../data/processed/anomalias_cundinamarca_bogota/anomalies_precipitation_combined.csv"
+    anomalies_combined_drought_cun = "../../data/processed/anomalias_cundinamarca_bogota/anomalies_drought_combined.csv"
+    anomalies_combined_wind_cun = "../../data/processed/anomalias_cundinamarca_bogota/anomalies_wind_combined.csv"
+    output_dir_cun = "../../articles/graficas/anomalias_cundinamarca_bogota"
+
+    plot_creation_storage(anomalies_combined_temp_cun, anomalies_combined_rainfall_cun, anomalies_combined_drought_cun, anomalies_combined_wind_cun,output_dir_cun)  
+
+     # Graficas Valle del Cauca 
+    anomalies_combined_temp_val = "../../data/processed/anomalias_valle_cauca/anomalies_temperature_combined.csv"
+    anomalies_combined_rainfall_val = "../../data/processed/anomalias_valle_cauca/anomalies_precipitation_combined.csv"
+    anomalies_combined_drought_val = "../../data/processed/anomalias_valle_cauca/anomalies_drought_combined.csv"
+    anomalies_combined_wind_val = "../../data/processed/anomalias_valle_cauca/anomalies_wind_combined.csv"
+    output_dir_val = "../../articles/graficas/anomalias_valle_cauca"
+
+    plot_creation_storage(anomalies_combined_temp_val, anomalies_combined_rainfall_val, anomalies_combined_drought_val, anomalies_combined_wind_val,output_dir_val)  
